@@ -15,4 +15,4 @@ switch (current_url) {
         break;
 }
 
-alert(filtered_content);
+console.log(filtered_content);
