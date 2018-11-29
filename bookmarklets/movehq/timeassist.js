@@ -32,10 +32,18 @@ if (filtered_content.length > 0) {
                 jQuery('select[name^="' + value.name + '"] option:contains("' + value.value + '")').prop("selected", true);
                 break;
             case 'Projects':
-
-                break;
             case 'Customers':
-
+                jQuery('select[name^="' + value.name + '"] option').each(function () {
+                    var select_option = this;
+                    jQuery.each(value.filtered_options, function (option_index, option_value) {
+                        if (jQuery(select_option).val().indexOf(option_value) < 0) {
+                            jQuery(select_option).remove();
+                        }
+                    });
+                });
+                //jQuery.each(value.filtered_options, function (option_index, option_value) {
+                //    jQuery('select[name^="' + value.name + '"] option:contains("' + option_value + '")').
+                //});
                 break;
         }
     });
