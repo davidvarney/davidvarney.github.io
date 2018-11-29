@@ -35,16 +35,20 @@ if (filtered_content.length > 0) {
             case 'Customers':
                 jQuery('select[name^="' + value.name + '"] option').each(function () {
                     var select_option = this;
+                    var found_it = 0;
                     jQuery.each(value.filtered_options, function (option_index, option_value) {
-console.log("Field: " + value.name);
-console.log("Option Value: " + jQuery(select_option).val());
-console.log("Searching For: " + option_value);
-console.log("Found?: " + jQuery(select_option).val().indexOf(option_value));
-                        if (jQuery(select_option).val().indexOf(option_value) === -1) {
-                            jQuery(select_option).remove();
-                            return true;
+//console.log("Field: " + value.name);
+//console.log("Option Value: " + jQuery(select_option).val());
+//console.log("Searching For: " + option_value);
+//console.log("Found?: " + jQuery(select_option).val().indexOf(option_value));
+                        if (jQuery(select_option).val().indexOf(option_value) >= 0) {
+                            found_it++;
                         }
                     });
+
+                    if (found_it === 0) {
+                        jQuery(this).remove();
+                    }
                 });
                 break;
         }
