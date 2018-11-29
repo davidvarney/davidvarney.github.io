@@ -1,8 +1,8 @@
-var protocol = window.location.protocol;
+//var protocol = window.location.protocol;
 var current_url = window.location.host;
-var uri = window.location.pathname;
-var params = window.location.search.substring(1);
-alert(current_url);
+//var uri = window.location.pathname;
+//var params = window.location.search.substring(1);
+//alert(current_url);
 var filtered_content = [];
 switch (current_url) {
     case 'timeassist.movehq.com':
@@ -36,14 +36,14 @@ if (filtered_content.length > 0) {
                 jQuery('select[name^="' + value.name + '"] option').each(function () {
                     var select_option = this;
                     jQuery.each(value.filtered_options, function (option_index, option_value) {
+console.log("Field: " + value.name);
+console.log("Option Value: " + jQuery(select_option).val());
+console.log("Searching For: " + option_value);
                         if (jQuery(select_option).val().indexOf(option_value) < 0) {
                             jQuery(select_option).remove();
                         }
                     });
                 });
-                //jQuery.each(value.filtered_options, function (option_index, option_value) {
-                //    jQuery('select[name^="' + value.name + '"] option:contains("' + option_value + '")').
-                //});
                 break;
         }
     });
