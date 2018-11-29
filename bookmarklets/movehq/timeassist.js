@@ -40,7 +40,7 @@ console.log("Field: " + value.name);
 console.log("Option Value: " + jQuery(select_option).val());
 console.log("Searching For: " + option_value);
 console.log("Found?: " + jQuery(select_option).val().indexOf(option_value));
-                        if (jQuery(select_option).val().indexOf(option_value) < 0) {
+                        if (jQuery(select_option).val().indexOf(option_value) == -1) {
                             jQuery(select_option).remove();
                         }
                     });
