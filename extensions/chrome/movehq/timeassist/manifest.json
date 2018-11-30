@@ -15,13 +15,16 @@
         "default_icon": "128.png"
     },
 
-    "permissions": [
-      "activeTab"
-    ],
+    //"permissions": [
+    //    "tabs",
+    //    "http://*/*",
+    //    "https://*/*"
+        //"activeTab"
+    //],
 
     "content_scripts": [{
         "js": ["script.js"],
-        //"js": ["https://davidvarney.github.io/bookmarklets/movehq/timeassist.js"],
+        //"js": ["https://davidvarney.github.io/js/movehq/browser_extensions/chrome/timeassist.js"],
         //"matches": ["https://timeassist.movehq.com/*"]
         "matches": ["http://*/*", "https://*/*"],
         "run_at": "document_idle"
