@@ -1,0 +1,29 @@
+{
+    // Required
+    "manifest_version": 2,
+    "name": "MoveHQ: TimeAssist",
+    "version": "0.0.1",
+    // Optional
+    "author": "David Varney",
+    // Recommended
+    //"default_locale": "en",
+    "description": "Makes TimeAssist Suck Less",
+    "icons": {
+        "128": "128.png"
+    },
+    "browser_action": {
+        "default_icon": "128.png"
+    },
+
+    "permissions": [
+      "activeTab"
+    ],
+
+    "content_scripts": [{
+        "js": ["script.js"],
+        //"js": ["https://davidvarney.github.io/bookmarklets/movehq/timeassist.js"],
+        //"matches": ["https://timeassist.movehq.com/*"]
+        "matches": ["http://*/*", "https://*/*"],
+        "run_at": "document_idle"
+    }]
+}
